@@ -1,0 +1,80 @@
+.main {
+    position: relative;
+}
+
+
+  .h1{
+    position: absolute;
+    left    :20%;
+    top     : 60%;
+    font-size              : 100px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+  .h1:hover{
+    position: absolute;
+    left    :20%;
+    top     : 60%;
+    font-size              : 100px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #240b36, #c31432, #c31432, #240b36);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+.text {
+    position               : absolute;
+    left                   : 35%;
+    top                    : 30%;
+    font-size              : 200px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+.text:hover {
+    position               : absolute;
+    left                   : 35%;
+    top                    : 30%;
+    font-size              : 200px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #240b36, #c31432, #c31432, #240b36);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+.link{
+    padding: 10px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    font-size: 50px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #c31432, #240b36, #240b36, #c31432);
+    background-size: 200% 200%;
+    border-radius: 20% ;
+}
+
+.link:hover{
+    padding: 10px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    font-size: 50px;
+    color: #eee;
+    text-transform: capitalize;
+    background: linear-gradient(-45deg, #240b36, #c31432, #c31432, #240b36);
+    background-size: 200% 200%;
+    border-radius: 20% ;
+}

@@ -1,0 +1,452 @@
+* {
+    box-sizing: border-box;
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* body{
+    color: white;
+    background-color: black;
+} */
+hr{
+ border-top: 1px solid #ee09c8;
+}
+
+
+/* auto complete for register contry */
+
+.autocomplete {
+    position: relative;
+    display : inline-block;
+}
+input {
+    border          : 1px solid transparent;
+    background-color: #f1f1f1;
+    padding         : 10px;
+    font-size       : 16px;
+}
+
+input[type=text] {
+    background-color: #f1f1f1;
+    width           : 100%;
+}
+
+input[type=submit] {
+    background-color: DodgerBlue;
+    color           : #fff;
+}
+
+.autocomplete-items {
+    position  : absolute;
+    border  : 1px solid #d4d4d4;
+    border-bottom : none;
+    border-top  : none;
+    z-index : 99;
+    top : 100%;
+    left: 0;
+    right: 0;
+
+}
+
+.autocomplete-items div {
+    padding         : 10px;
+    cursor          : pointer;
+    background-color: #fff;
+    border-bottom   : 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #27dab3;
+}
+
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color           : #ffffff;
+}
+.custom-control-input {
+    cursor   : pointer;
+}
+
+/* bootstarab changes and added  */
+ul {
+    list-style-type: none;
+}
+
+.bg-silver {
+    background-color: silver !important;
+}
+.w-20{
+    width: 20% !important;
+}
+.w-85 {
+    width: 85% !important;
+}
+
+.w-90 {
+    width: 90% !important;
+}
+
+.w-95 {
+    width: 95% !important;
+}
+
+.h-85 {
+    height: 85% !important;
+}
+
+.h-90 {
+    height: 90% !important;
+}
+
+.h-95 {
+    height: 95% !important;
+}
+
+
+/*  none */
+.welcome-image {
+    position: relative;
+}
+
+.welcome-image a {
+    position: absolute;
+    right   : 10%;
+}
+
+.welcome-register-link {
+    top: 60%;
+}
+
+.welcome-login-link {
+    top: 75%;
+}
+.noCredits{
+    position: relative;
+}
+
+@media (max-width: 800px) {
+    .noCredits h2:after{
+        content: "";
+        display: block;
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 10px;
+        width:  450px;
+        border-bottom: 30px solid rgba(106,80,255,.4);
+    }
+}
+.noCredits h2:after{
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 10px;
+    width:  450px;
+    border-bottom: 30px solid rgba(106,80,255,.4);
+}
+
+.Icon-inside {
+    position: relative;
+}
+
+.Icon-inside span {
+    position: absolute;
+    right   : 30px;
+    top     : 12px;
+    color   : red;
+    cursor  : pointer;
+}
+
+
+footer{
+    border-top: solid 5px #27dab3;
+}
+.homePostImage{
+    background-color: #6beed2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .burst-logo {
+        top: 3px;
+        position: absolute;
+        left: 52%;
+        margin-left: -50px!important;
+        display: block;
+        animation: user-logo-spin infinite 20s linear;
+        -webkit-animation: user-logo-spin infinite 20s linear;
+}
+
+  }
+
+  @keyframes user-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+  ::-webkit-scrollbar-thumb {
+     width: 5px;
+    background: rgba(66, 228, 233, 0.659);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    width: 20px;
+    background: #f07979;
+  }
+
+.sidebar{
+    border: solid 2px rgba(12, 223, 230, 0.4);
+    overflow-x: hidden;
+    overflow-y: auto ;
+}
+
+.sidebar::-webkit-scrollbar {
+     width: 12px;
+ }
+
+ .sidebar::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+ }
+
+ .sidebar::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+ }
+ .sidebar::-webkit-scrollbar-thumb:hover {
+    width: 20px;
+    background: #73a8ed;
+  }
+
+.timer , .homePostLink{
+    font-size: 3px !important;
+}
+
+/* animation  */
+@media screen and (max-width: 800px) {
+    .feature .left {
+        margin-bottom: -60%;
+        border-radius: 10px;
+        width: 450px;
+        -webkit-perspective: 484px;
+        perspective: 484px;
+        -webkit-box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+        box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+        transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+        transition: all 1s ease-out;
+        -webkit-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+        -moz-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+        -ms-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+        -o-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+}
+    .feature .right {
+        margin-bottom: -60%;
+        border-radius: 10px;
+        width: 450px;
+        -webkit-perspective: 484px;
+        perspective: 484px;
+        -webkit-box-shadow: 65.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+        box-shadow: 67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+        transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(-23deg) rotate(15deg) translateX(-35px) translateY(-185px);
+        -webkit-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+}
+}
+
+
+.feature .left {
+    margin-bottom: -90%;
+    border-radius: 10px;
+    width: 450px;
+    -webkit-perspective: 484px;
+    perspective: 484px;
+    -webkit-box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+    transition: all 0.2s ease-out;
+    -webkit-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+    -moz-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+    -ms-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+    -o-transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-9.8deg) translateX(20px) translateY(-200px);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+}
+
+.feature .left:hover {
+    margin-bottom: -60%;
+    border-radius: 10px;
+    width: 450px;
+    -webkit-perspective: 484px;
+    perspective: 484px;
+    -webkit-box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    box-shadow: -67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), -16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    transform: scale(1) perspective(0px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -webkit-transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -moz-transform: scale(1) perspective(0px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -ms-transform: scale(1) perspective(0px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -o-transform: scale(1) perspective(0px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+}
+
+.feature .right {
+    margin-bottom: -60%;
+    border-radius: 10px;
+    width: 450px;
+    -webkit-perspective: 484px;
+    perspective: 484px;
+    -webkit-box-shadow: 65.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    box-shadow: 67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(-23deg) rotate(15deg) translateX(-35px) translateY(-185px);
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+ }
+.feature .right:hover {
+    margin-bottom: -60%;
+    border-radius: 10px;
+    width: 450px;
+    -webkit-perspective: 484px;
+    perspective: 484px;
+    -webkit-box-shadow: 65.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    box-shadow: 67.1px 62.5px 125px -25px rgb(9 9 14 / 86%), 16.2px 37.5px 75px -37.5px rgb(6 12 34 / 27%);
+    transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    -webkit-transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -moz-transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -ms-transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+    -o-transform: scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0px) translateY(0px);
+}
+
+.homeImagePost{
+    position: relative;
+}
+.PostCaegory{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    background: #6beed2;
+    padding: 5px;
+}
+.PostContent{
+    position: absolute;
+    bottom: 30%;
+    left: 20%;
+    background: #6beed2;
+    padding: 5px;
+}
+.PostedBy{
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    background: #6beed2;
+    padding: 5px;
+}
+.PostInfo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 5;
+    box-sizing: border-box;
+    padding: 100px 15px;
+}
+.PostImage{
+        width: 100%;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.navigation-tab{
+height: 100px;
+width:300px;
+overflow: hidden;
+display:flex;
+flex-shrink:0;
+position:relative;
+background-color: #3B3134;
+}
+.tab-icon img{
+    height: 32px;
+    width: 32px;
+}
+.tab-item{
+    display: flex;
+    text-align:center;
+    flex-direction:column;
+    width: 65px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    position:relative;
+    z-index: 2;
+
+}
+.tab-icon{
+    transform: translate(0px.5.5px);
+}
+.nav-text{
+    opacity:0;
+    transform: translate(0, 10px);
+    -webkit-transform: translate(0, 10px);
+    -moz-transform: translate(0, 10px);
+    -ms-transform: translate(0, 10px);
+    -o-transform: translate(0, 10px);
+}
+.tab-overlay{
+    height: 100%;
+    width: 105px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition:0.3s;
+    background-color:#f7ccaf;
+}
+.tab-icon{
+    line-height: 1;
+    transition-duration: 0.3s;
+    transform: translate(0 ,11px);
+}
+.nav-text{
+    display: block;
+    font-size:15px;
+    font-weight: border;
+    text-transform: capitalize;
+    transition-duration: 0.3s;
+    transform: translate(0 ,20px);
+    -webkit-transform: translate(0 ,20px);
+    -moz-transform: translate(0 ,20px);
+    -ms-transform: translate(0 ,20px);
+    -o-transform: translate(0 ,20px);
+    user-select: none;
+}

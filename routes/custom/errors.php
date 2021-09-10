@@ -6,6 +6,7 @@
 Route::get('/401', function () {
     return view('errors.401');
 })->name('401');
+
 Route::get('/403', function () {
     return view('errors.403');
 })->name('403');

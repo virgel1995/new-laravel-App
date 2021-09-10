@@ -20,7 +20,7 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
                 <x-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                    {{ ('Dashboard') }}
                 </x-nav-link>
                 <x-nav-link class="text-red-50 px-3 py-2 rounded-md text-sm font-medium" :href="config('chatify.routes.prefix')" :active="request()->routeIs('dashboard')">
                     {{ __('Chat') }}

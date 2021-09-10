@@ -29,8 +29,8 @@
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
                             <x-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
-                                :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
+                                :href="route('dashboard')" :active="request()->routeIs('dashboard')" >
+                                {{ ('Dashboard') }}
                             </x-nav-link>
                             <x-nav-link class="text-red-50 px-3 py-2 rounded-md text-sm font-medium"
                                 :href="config('chatify.routes.prefix')" :active="request()->routeIs('dashboard')">
@@ -59,40 +59,37 @@
 
 
 
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div :class="{'block': open, 'hidden': ! open}" class="sm:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <div class="pt-4 pb-1 border-t border-gray-200">
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div :class="{'block': open, 'hidden': ! open}" class="sm:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <div class="pt-4 pb-1 border-t border-gray-200">
+                @if (Route::has('login'))
+                @auth
+                <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
+                    :href="route('dashboard')">
+                    {{ ('Dashboard') }}
+                </x-responsive-nav-link>
 
+                <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
+                    :href="config('chatify.routes.prefix')">
+                    {{ __('Chat') }}
+                </x-responsive-nav-link>
 
-                    @if (Route::has('login'))
-                            @auth
-                            <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
-                                :href="route('dashboard')" >
-                                {{ __('Dashboard') }}
-                            </x-responsive-nav-link>
+                @else
+                <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
+                    :href="route('login')">
+                    {{ __('Log in') }}
+                </x-responsive-nav-link>
 
-                            <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
-                                :href="config('chatify.routes.prefix')" >
-                                {{ __('Chat') }}
-                            </x-responsive-nav-link>
-
-                            @else
-                            <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
-                                :href="route('login')" >
-                                {{ __('Log in') }}
-                            </x-responsive-nav-link>
-
-                            @if (Route::has('register'))
-                            <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
-                                :href="route('register')" >
-                                {{ __('Register') }}
-                            </x-responsive-nav-link>
-                            @endif
-                            @endauth
-                        </div>
-                    @endif
-                </div>
+                @if (Route::has('register'))
+                <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
+                    :href="route('register')">
+                    {{ __('Register') }}
+                </x-responsive-nav-link>
+                @endif
+                @endauth
             </div>
+            @endif
         </div>
+    </div>
 </nav>

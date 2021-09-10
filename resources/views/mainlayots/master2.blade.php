@@ -1,6 +1,6 @@
 @include('mainlayots.head')
 
-        <main class="container darkmode">
+        <main class="container">
             @include('mainlayots.navigtion')
             @yield('content')
         </main>

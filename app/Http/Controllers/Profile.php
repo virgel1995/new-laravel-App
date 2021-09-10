@@ -5,23 +5,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Attachment;
 
-
-class UserController extends Controller
+class Profile extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-    }
-
-
-    public function ip_details()
-    {
-        // $ip = '127.0.0.1'; //For static IP address get
-        $ip = request()->ip();
-        // dd($ip);
-        $data = \Location::get($ip);
-        // return view('details',compact('data'));
     }
 
     public function index()
@@ -122,6 +112,11 @@ public function updateUserAvatar(Request $request )
 
         $image = $request->file('avatar');
         $image_new_name = time().$image->getClientOriginalName();
+        // Attachment::create([
+        //     'user_id' => Auth::id(),
+        //     'thumb_Url'=> "images/avatars/".$user->email."/".$image_new_name,
+        //     'file_Url'=> "images/avatars/".$user->email."/".$image_new_name
+        // ]);
         $user->update([
             'avatar' => "images/avatars/".$user->email."/".$image_new_name
         ]);
@@ -143,8 +138,11 @@ public function onlineUsers(){
     ->whereNotNull('last_seen')
     ->orderBy('last_seen', 'DESC')
     ->paginate(10);
-
+    
     return view('user.online', compact('users'));
 }
+
+
+
 
 }

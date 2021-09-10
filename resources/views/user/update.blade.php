@@ -1,7 +1,7 @@
 @extends('mainlayots.master2')
 
 @section('title')
-{{  __('Personal Page') }}
+ {{ __("Update Settings") }}
 @endsection
 
 @section('content')

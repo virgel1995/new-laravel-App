@@ -21,5 +21,6 @@ Route::get('/', function () {
 // this route to get country ip adrees for auto localization
 // Route::get('ip_details', [UserController::class, 'ip_details'])->name('ip_details');
 
-require __DIR__.'/custom/auth.php'; // custom auth file including (Path: routs/custom)
-require __DIR__.'/custom/errors.php'; // errors file including (Path: routs/custom)
+require __DIR__.'/custom/auth.php'; // custom auth file including (Path: routs/custom/auth)
+require __DIR__.'/custom/errors.php'; // errors file including (Path: routs/custom/errors)
+require __DIR__.'/custom/profile.php'; // profile file including (Path: routs/custom/profile)

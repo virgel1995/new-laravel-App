@@ -14,7 +14,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/errors/404.css') }}" rel="stylesheet">
-
 </head>
 <body>
 

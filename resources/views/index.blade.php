@@ -11,8 +11,9 @@
 
     </head>
     <body class="antialiased bg-blue-100">
-        @include('mainlayots.navigtion')
-<div class="py-12 mt-2 bg-blue-200">
+        @include('layouts.navigation')
+
+        <div class="py-12 mt-2 bg-blue-200">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:text-center">

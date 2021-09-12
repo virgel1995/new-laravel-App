@@ -9,11 +9,11 @@ jQuery(document).ready(function($) {
 
         // $('#feature-hidden').addClass('feature-hidden-class');
         $('.feature-hidden').hide()
-        console.log('added')
+        // console.log('added')
       } else if (screensize >= 601) {
         // $('#feature-hidden').removeClass('feature-hidden-class');
         $('.feature-hidden').show()
-        console.log('removed')
+        // console.log('removed')
 
       };
     };
@@ -23,3 +23,6 @@ jQuery(document).ready(function($) {
     //Fire it when the page first loads:
     alterClass();
   });
+
+
+

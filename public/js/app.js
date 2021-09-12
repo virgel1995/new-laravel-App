@@ -3810,12 +3810,10 @@ jQuery(document).ready(function ($) {
 
     if (screensize < 600) {
       // $('#feature-hidden').addClass('feature-hidden-class');
-      $('.feature-hidden').hide();
-      console.log('added');
+      $('.feature-hidden').hide(); // console.log('added')
     } else if (screensize >= 601) {
       // $('#feature-hidden').removeClass('feature-hidden-class');
-      $('.feature-hidden').show();
-      console.log('removed');
+      $('.feature-hidden').show(); // console.log('removed')
     }
 
     ;

@@ -19,21 +19,24 @@ class UserSeeder extends Seeder
                 'middle_name' => 'User',
                 'email' => 'demo@e.com',
                 'password' => bcrypt('demo1234'),
-                'avatar' => 'chatify-logo.png'
+                'avatar' => 'chatify-logo.png',
+                'role'=> 'admin'
             ],
             [
                 'first_name' => 'Munaf A',
                 'middle_name' => 'Aqeel',
                 'email' => 'info@munafio.com',
                 'password' => bcrypt('google11'),
-                'avatar' => 'munafio.jpg'
+                'avatar' => 'munafio.jpg',
+                'role'=> 'admin'
             ],
             [
                 'first_name' => 'Abdulmuaz',
                 'middle_name' => 'Aqeel',
                 'email' => 'devmuaz@e.com',
                 'password' => bcrypt('google11'),
-                'avatar' => 'devmuaz.jpg'
+                'avatar' => 'devmuaz.jpg',
+                'role'=> 'admin'
             ],
         ];
 

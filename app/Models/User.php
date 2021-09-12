@@ -41,14 +41,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isAdmin() {
+    public function isAdmin()
+    {
         return $this->role === 'admin';
-     }
- 
-    public function isUser() {
+    }
+
+    public function isUser()
+    {
         return $this->role === 'user';
-     } 
-// database relations
+    }
+    // database relations
+
+    public function country()
+    {
+        return $this->hasMany(Country::class);
+    }
 
     protected function post()
     {
@@ -74,7 +81,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Attachment::class);
     }
-    
+
     protected function blockList()
     {
         return $this->hasMany(Block_list::class);
@@ -83,5 +90,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Converstion::class);
     }
-
 }

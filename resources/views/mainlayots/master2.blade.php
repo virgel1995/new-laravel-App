@@ -1,7 +1,7 @@
 @include('mainlayots.head')
 
         <main class="container">
-            @include('mainlayots.navigtion')
+            @include('layouts.navigation')
             @yield('content')
         </main>
 

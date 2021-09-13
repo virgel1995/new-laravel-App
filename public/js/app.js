@@ -3802,28 +3802,45 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
-var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-jQuery(document).ready(function ($) {
-  var alterClass = function alterClass() {
+$(document).ready(function () {
+  // resize for mobile
+  function alterClass() {
     var screensize = document.documentElement.clientWidth;
 
     if (screensize < 600) {
-      // $('#feature-hidden').addClass('feature-hidden-class');
-      $('.feature-hidden').hide(); // console.log('added')
-    } else if (screensize >= 601) {
-      // $('#feature-hidden').removeClass('feature-hidden-class');
-      $('.feature-hidden').show(); // console.log('removed')
+      $(".feature-hidden").hide();
+      $(".pc-profileCard").hide();
+    } else if (screensize >= 768) {
+      $(".feature-hidden").show();
+      $(".pc-profileCard").show();
     }
+  }
 
-    ;
-  };
-
+  ;
   $(window).resize(function () {
     alterClass();
-  }); //Fire it when the page first loads:
+  }); // sidebar buttons
 
-  alterClass();
+  $("#openbtn").click(function () {
+    //open
+    $(".sidebar").removeClass("hidden");
+    $(".sidebar").addClass("col-span-2");
+    $(".main").addClass("col-span-5");
+    $(".main").removeClass("col-span-7");
+    $("#openbtn").addClass("hidden");
+    $("#closebtn").removeClass("hidden");
+  });
+  $("#closebtn").click(function () {
+    // close
+    $(".sidebar").removeClass("col-span-2");
+    $(".sidebar").addClass("hidden");
+    $(".main").removeClass("col-span-5");
+    $(".main").addClass("col-span-7");
+    $("#openbtn").removeClass("hidden");
+    $("#closebtn").addClass("hidden");
+  });
 });
 
 /***/ }),
@@ -31963,6 +31980,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -32329,6 +32359,7 @@ process.umask = function() { return 0; };
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

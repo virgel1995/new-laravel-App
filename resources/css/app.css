@@ -3,3 +3,41 @@
 @import 'tailwindcss/utilities';
 
 
+html {
+    scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
+}
+
+.sidebar-scroll{
+    /* border: solid 2px rgba(12, 223, 230, 0.4); */
+    overflow-x: hidden;
+    overflow-y: auto ;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+     width: 12px;
+ }
+
+ .sidebar-scroll::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+ }
+
+ .sidebar-scroll::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+ }
+ .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    width: 20px;
+    background: #73a8ed;
+  }
+
+
+  .py-auto{
+      padding-top: auto;
+      padding-bottom: auto;
+  }
+  .my-auto{
+      margin-top: auto;
+      margin-bottom: auto;
+  }

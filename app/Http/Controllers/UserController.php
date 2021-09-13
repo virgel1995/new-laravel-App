@@ -204,39 +204,17 @@ class UserController extends Controller
     public function updateUserAvatar(Request $request)
     {
         $user = User::findOrFail(Auth::id());
-        // $this->validate($request, [
-        //     'avatar'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        // ]);
+        $this->validate($request, [
+            'avatar'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $image = $request->file('avatar');
+        dd($image);
+        // $avatar = Str::uuid() . "." . $image->getClientOriginalExtension();
+        // $user->update(['avatar' => $avatar ]);
 
-        $attachment = null;
-        $attachment_title = null;
+        $image->storeAs("public/" . config('chatify.user_avatar.folder'), $avatar);
 
-        // if there is attachment [file]
-        if ($request->hasFile('file')) {
-            // allowed extensions
-            $allowed_images = Chatify::getAllowedImages();
-            $allowed_files  = Chatify::getAllowedFiles();
-            $allowed        = array_merge($allowed_images, $allowed_files);
-
-            $file = $request->file('file');
-            // if size less than 150MB
-            if ($file->getSize() < 150000000) {
-                if (in_array($file->getClientOriginalExtension(), $allowed)) {
-                    // get attachment name
-                    $attachment_title = $file->getClientOriginalName();
-                    // upload attachment and store the new name
-                    $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
-                } else {
-                    $error->status = 1;
-                    $error->message = "File extension not allowed!";
-                }
-            } else {
-                $error->status = 1;
-                $error->message = "File extension not allowed!";
-            }
-        }
-
+        // $image->move("public/".config('chatify.user_avatar.folder'), $avatar);
         return redirect()->route('user.edit')->with('success', 'File Has been uploaded successfully');
     }
 

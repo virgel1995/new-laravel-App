@@ -12,14 +12,21 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+
         },
     },
 
     variants: {
         extend: {
             opacity: ['disabled'],
+
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+
+        require('@tailwindcss/forms'),
+        require('daisyui'),
+
+    ],
 };

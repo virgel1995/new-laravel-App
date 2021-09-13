@@ -44,6 +44,10 @@ return [
         'folder' => 'users-avatar',
         'default' => 'avatar.png',
     ],
+    'user_background' => [
+        'folder' => 'users-background',
+        'default' => 'background.png',
+    ],
 
     /*
     |-------------------------------------

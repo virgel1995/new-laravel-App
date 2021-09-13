@@ -1,11 +1,17 @@
 
 <x-guest-layout> <!-- laravel/breeze -->
     <script src="{{ asset('js/script.js') }}" ></script>
-    <x-auth-card>
+    <x-auth-card >
+
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+        </x-slot>
+        <x-slot name="head">
+            <h2 class="text-white bg-black bg-blend-color py-3 px-20 block rounded ">
+                Rigester
+            </h2>
         </x-slot>
 
         <!-- Validation Errors -->
@@ -44,7 +50,7 @@
                 <x-label for="name" :value="__('Country')" />
 
                 <div class=" col-6 autocomplete border-danger ">
-                    <select class="block mt-1 w-full" name="country">
+                    <select class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="country">
                         @foreach ($countries as $country)
                             <option :value="{{$country->code}}"  >{{$country->name}} - {{$country->code}}</option>
                         @endforeach
@@ -77,13 +83,13 @@
             </div>
 
             <div class="row row-xs">
-                <div class="col-sm-6">
-                    <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
-                </div>
-
-                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                    <button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
-                </div>
+                <h2 class="text-center mt-2"> Or </h2>
+                <a href="{{ route('register') }}" class="py-1 px-3 text-center bg-gray hover:bg-blue-900 rounded border border-red-900 block mt-3 text-black hover:text-white">
+                   {{ __("Register With") }} <i class="fab fa-facebook-f px-2 py-2 mr-2 rounded hover:bg-black bg-blue-900 text-white"></i>
+               </a>
+               <a href="{{ route('register') }}" class="  py-1 px-3 text-center bg-gray hover:bg-blue-400 rounded border border-red-900 block mt-3 text-black hover:text-white">
+                    {{ __("Register With") }} <i class="fab fa-twitter px-2 py-2 mr-2 rounded hover:bg-black bg-blue-400 text-white"></i>
+               </a>
             </div>
         </form>
 

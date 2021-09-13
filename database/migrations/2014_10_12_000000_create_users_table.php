@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->text('preference')->default('No Bio Add It');
             $table->enum('role', ['user','admin'])->default('user');
             $table->string('avatar')->default(config('chatify.user_avatar.default'));
-            $table->string('background')->default('https://www.pinclipart.com/picdir/middle/377-3777014_add-team-members-with-multi-user-accounts-multi.png');
+            $table->string('background')->default(config('chatify.user_background.default'));
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('last_seen')->nullable();
             $table->boolean('active_status')->default(0);
@@ -37,7 +37,6 @@ class CreateUsersTable extends Migration
             $table->string('messenger_color')->default('#2180f3');
             $table->rememberToken();
             $table->timestamps();
-
         });
     }
 

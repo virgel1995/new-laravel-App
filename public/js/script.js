@@ -39,6 +39,7 @@ function ShowAndHidePassword() {
         x.type = "password";
     }
 };
+
 //show and hide password
 function ShowAndHideRegisterPassword() {
     var x = document.getElementById("password");

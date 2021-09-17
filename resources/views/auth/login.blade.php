@@ -5,7 +5,11 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
-
+        <x-slot name="head">
+            <h2 class="text-white bg-black bg-blend-color py-3 px-20 block rounded ">
+                Login
+            </h2>
+        </x-slot>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 

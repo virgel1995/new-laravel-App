@@ -1,6 +1,6 @@
 @include('mainlayots.head')
 
-        <main class="container">
+        <main class="container ">
             @include('layouts.navigation')
             @yield('content')
             {{-- @include('mainlayots.Pagefooter') --}}

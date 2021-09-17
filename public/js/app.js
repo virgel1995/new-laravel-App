@@ -3842,6 +3842,77 @@ $(document).ready(function () {
     $("#closebtn").addClass("hidden");
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var Inputs = document.getElementsByTagName("input");
+
+  for (var i = 0; i < Inputs.length; i++) {
+    Inputs[i].oninvalid = function (e) {
+      e.target.setCustomValidity("");
+
+      if (!e.target.validity.valid) {
+        e.target.setCustomValidity("This field cannot be left blank");
+      }
+    };
+
+    Inputs[i].oninput = function (e) {
+      e.target.setCustomValidity("");
+    };
+  }
+
+  var Textarea = document.getElementsByTagName("textarea");
+
+  for (var i = 0; i < Textarea.length; i++) {
+    Textarea[i].oninvalid = function (e) {
+      e.target.setCustomValidity("");
+
+      if (!e.target.validity.valid) {
+        e.target.setCustomValidity("This field cannot be left blank");
+      }
+    };
+
+    Textarea[i].oninput = function (e) {
+      e.target.setCustomValidity("");
+    };
+  }
+});
+
+function readURL(input) {
+  //for uploadingpost image
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('.profile-img-tag').attr('src', e.target.result); // $('#profile-img1-tag').attr('src', e.target.result);
+      // $('#profile-img2-tag').attr('src', e.target.result);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#profile-img").change(function () {
+  readURL(this);
+}); // window.onload = function () {
+//     var divReference =
+//         document.querySelector(".divstudent");
+//     divReference.addEventListener(
+//         "click",
+//         function () {
+// var divToCreate = document.createElement("Label");
+// divToCreate.setAttribute('class' , 'divstudent')
+//   divToCreate.innerHTML = `
+//   <label>
+//   <input type="file" hidden name="image" class="h-24  px-1"
+//   id="profile-img" >
+//   <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-plus-ecommerce-flatart-icons-outline-flatarticons.png" id="profile-img-tag" class="h-24 w-24 rounded border border-pink-300 cursor-pointer" alt="">
+//   </label> `;
+//             divReference.parentNode.appendChild(
+//                 divToCreate
+//             );
+//         },
+//         false
+//     );
+// };
 
 /***/ }),
 

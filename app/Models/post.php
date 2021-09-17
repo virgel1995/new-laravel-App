@@ -1,40 +1,27 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Catigores;
-use App\Models\User;
 
 class Post extends Model
 {
-    use HasFactory;
-
-    public $fillable = [
-    'title',
-    'content',
-    'image',
-    'category_id'
-];
-
-    protected function user()
+    protected $fillable = [
+        'title',
+        'slug',
+        'user_id',
+        'content',
+        'image'
+    ];
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    protected function catigores()
+
+    public function comments()
     {
-        return $this->belongsTo(Catigores::class);
-    }
-    
-    protected function attachment()
-    {
-        return $this->hasMany(Attachment::class);
+        return $this->hasMany(Comment::class, 'commentable_id')->whereNull('parent_id');
     }
 
-    public function isToday()
-    {
-        return Post::where('created_at', Carbon::today())->get();
-    }
+
 }

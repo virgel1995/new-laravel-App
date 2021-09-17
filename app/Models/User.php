@@ -52,41 +52,41 @@ class User extends Authenticatable
     }
     // database relations
 
-    public function country()
+    public function country() : HasMany
     {
         return $this->hasMany(Country::class);
     }
 
-    protected function post()
+    protected function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }
 
-    protected function message()
+    protected function messages(): HasMany
     {
         return $this->hasMany(Message::class);
     }
 
-    protected function friends()
+    protected function friends(): HasMany
     {
         return $this->hasMany(Friend::class);
     }
 
-    protected function userContact()
+    protected function userContacts(): HasMany
     {
         return $this->hasMany(User_contact::class);
     }
 
-    protected function attachment()
+    protected function attachments(): HasMany
     {
         return $this->hasMany(Attachment::class);
     }
 
-    protected function blockList()
+    protected function blockLists(): HasMany
     {
         return $this->hasMany(Block_list::class);
     }
-    protected function converstion()
+    protected function converstions(): HasMany
     {
         return $this->hasMany(Converstion::class);
     }

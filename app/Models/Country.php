@@ -13,7 +13,7 @@ class Country extends Model
         'name', 'code'
     ];
 
-    protected function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

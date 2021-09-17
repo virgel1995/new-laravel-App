@@ -15,11 +15,7 @@ class Deleted_conversation extends Model
         'user_id',
         'conversation_id',
     ];
-    /**
-     * Get the user that owns the deleted_conversation
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+
     public function user()
     {
         return $this->belongsTo(User::class);

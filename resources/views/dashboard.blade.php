@@ -1,10 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-    <div class="absolute">
-        <a id="openbtn" class="openbtn top-0 left-0 p-2 text-white rounded hover:bg-indigo-400 hover:text-white bg-black hidden">☰ </a>
-
-        <a href="javascript:void(0)" id="closebtn" class="closebtn top-0 left-0 p-2 text-white rounded hover:bg-indigo-400 hover:text-white bg-black" >×</a>
-    </div>
     <a href="" class="top-0 left-20 py-5 ml-10 font-semibold text-xl text-gray-800 leading-tight">
         {{ ('Dashboard') }}
     </a>
@@ -18,8 +13,28 @@
 
 
           <div class="main relative bg-black col-span-5 transition delay-150 duration-1000 ">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-          </div> <!-- 1 -->
+            @include('post.create') <!-- post create card -->
+            @foreach($posts as $post)
+            <div class=" p-2"> <!-- user posts start  -->
+                  <div class="flex items-center w-full px-4 py-10 bg-cover card bg-base-200" style="background-image: url(&quot;https://picsum.photos/id/314/1000/300&quot;);">
+                      <div class="card glass sm:flex lg:card-side text-neutral-content">
+                        <figure class="p-6">
+                          {{-- <img src="https://picsum.photos/id/1005/300/200" class="rounded-lg shadow-lg"> --}}
+                          @if ($post->image)
+                          <img src="{{ asset('/storage/users_posts/'.$post->image) }}" class="rounded-lg shadow-lg h-32 py-auto w-24">
+                          @endif
+                        </figure>
+                        <div class="max-w-md card-body">
+                          <h2 class="card-title">{{ $post->user->first_name. ' ' .$post->user->middle_name.' : '.$post->title }}</h2>
+                          <p>{{ Str::substr($post->content, 0, 250) }}</p>
+                          <div class="card-actions">
+                            <a href="{{ route('post.show',$post->slug) }}" class="btn glass rounded-full">View Post</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div> <!--  user posts end  -->
+          @endforeach          </div> <!-- 1 -->
     </div>
 
     <script>

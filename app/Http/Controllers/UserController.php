@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Chatify\Facades\ChatifyMessenger as Chatify;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 use App\Models\Country;
 
 class UserController extends Controller
@@ -28,8 +29,10 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = Auth::user();
-        return view('user.index', compact('user'));
+
+        $user =  Auth::user();
+        $posts = Post::where("user_id", "=", Auth::id())->get();
+        return view('user.index', compact('user' , 'posts'));
     }
     public function privte()
     {

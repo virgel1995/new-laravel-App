@@ -1,8 +1,7 @@
 
-<div id="mySidebar" class="md:flex flex-col py-2 md:flex-row md:min-h-screen">
+<div id="mySidebar" class="md:flex fixed flex-col w-80 py-2 md:flex-row md:min-h-screen">
 
-    <div @click.away="open = false" class="flex flex-col md:w-full text-gray-700 bg-blue-700 rounded border-2 border-pink-700 dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
-        <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+    <div @click.away="open = false" class="flex  w-80  flex-col md:w-full text-gray-700 bg-blue-700 rounded border-2 border-pink-700 dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">        <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
         <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">{{ config('app.name' , 'Burst') }}</a>
 
 
@@ -23,7 +22,7 @@
       <nav :class="{'block': open, 'hidden': !open}" class="sidebar-scroll flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
 
           <!-- links start-->
-        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Blog</a>
+        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('posts') }}">Posts</a>
 
         <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Portfolio</a>
 

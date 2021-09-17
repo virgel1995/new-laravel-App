@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-gray-800">
+<nav x-data="{ open: false }" class="bg-gray-800 ">
     <div class="">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -12,9 +12,15 @@
         </div>
 
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex-shrink-0 flex items-center">
+            <div class="absolute ml-10">
+                <a id="openbtn" class="openbtn top-0 left-0 p-2 text-white rounded hover:bg-indigo-400 hover:text-white bg-black hidden">☰ </a>
+
+                <a href="javascript:void(0)" id="closebtn" class="closebtn top-0 left-0 p-2 text-white rounded hover:bg-indigo-400 hover:text-white bg-black" >×</a>
+            </div>
+            <div class="flex-shrink-0 flex items-center">
+
             <img class="block lg:hidden h-8 w-auto" src="{{ asset('images/logos/favicon.PNG') }}" alt="logo">
-            <img class="hidden lg:block h-8 w-auto" src="{{ asset('images/logos/favicon.PNG') }}" alt="Workflow">
+            <img class="hidden lg:block h-8  ml-20 w-auto" hidden src="{{ asset('images/logos/favicon.PNG') }}" alt="Workflow">
           </div>
 
           <div class="hidden sm:block sm:ml-6">
@@ -22,7 +28,7 @@
                 @if (Route::has('login'))
                 @auth
                 <x-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ ('Dashboard') }}
+                    {{ ('Home') }}
                 </x-nav-link>
                 <x-nav-link class="text-red-50 px-3 py-2 rounded-md text-sm font-medium" :href="config('chatify.routes.prefix')" :active="request()->routeIs('dashboard')">
                     {{ __('Chat') }}
@@ -108,7 +114,7 @@
                 <!-- Authentication -->
                 <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
                 :href="route('dashboard')">
-                {{ ('Dashboard') }}
+                {{ ('Home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link class=" text-red-50 px-3 py-2 rounded-md text-sm font-medium"
                 :href="config('chatify.routes.prefix')">

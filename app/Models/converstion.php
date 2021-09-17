@@ -12,7 +12,7 @@ class Converstion extends Model
 USE SoftDeletes;
 protected $dates = ['deleted_at'];
 
- 
+
 
     protected $fillable = [
         'title',
